@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4ee3f6e63c.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img id="menu-icon" src="https://img.icons8.com/?size=100&id=17144&format=png&color=000000">
+    </header>
+    <nav id="side-nav">
+        <ul>
+            <li><h2>THIS IS A MENU</h2></li>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    <div class="info-box">
+        <div class="info-title">
+            <h3>Info Title</h3>
+        </div>
+        <div class="info-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac tincidunt purus. In tincidunt augue at nulla commodo auctor. Aliquam viverra nisl vitae lobortis pharetra. Duis dignissim maximus quam a gravida. Pellentesque cursus nisl ac sollicitudin congue. Etiam blandit lacus non volutpat vulputate.</p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#menu-icon").click(function(){
+                $("#side-nav").slideToggle(1000, function () {
+                    alert("side navigation changed");
+                });
+            });
+
+            $(".info-title").hover(function(){
+                $(".info-content").slideToggle("slow");
+            })
+        });
+    </script>
+</body>
+</html>
