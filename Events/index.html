@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <p id="p1">Hover to this text!</p>
+    <p id="p2">Click the text!</p>
+    <p id="p3">Double Click to this text!</p>
+    <p id="p4">Move the cursor to out of the text!</p>
+    <p id="p5">Press Enter!</p>
+
+    <script>
+        $(document).ready(function() {
+            $('#p1').hover(function() {
+                $(this).hide();
+            });
+
+            $('#p2').click(function() {
+                $(this).hide();
+            });
+
+            $('#p3').dblclick(function() {
+                $(this).hide();
+            });
+
+            $('#p4').mouseout(function() {
+                $(this).hide();
+            });
+
+            var trigger = false;
+            $(document).keypress(function(e) {
+                if (e.which == 13) {
+                    if (trigger === false) {
+                        $("#p5").fadeIn(500);
+                        trigger = true
+                    } else if (trigger === true) {
+                        $("#p5").fadeOut(500);
+                        trigger = false;
+                    }
+                }
+            });
+        })
+    </script>
+</body>
+</html>
