@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="info-box">
+        <div class="info-before">
+            <h3>Click This Content!</h3>
+        </div>
+        <div class="info-after">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac tincidunt purus. In tincidunt augue at nulla commodo auctor. Aliquam viverra nisl vitae lobortis pharetra. Duis dignissim maximus quam a gravida. Pellentesque cursus nisl ac sollicitudin congue. Etiam blandit lacus non volutpat vulputate.</p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $(".info-box").click(function(){
+                $(".info-box").animate({
+                    width: '+=300px',
+                    height: '+=200px'
+                }, 3000).animate({
+                    fontSize: '20px',
+                }, 2000);
+
+                $(".info-after").show().animate({
+                    opacity: '1'
+                }, 4000);
+            });
+        });
+    </script>
+</body>
+</html>
